@@ -15,8 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.http import JsonResponse
+import os
 from rest_framework import routers
 from octofit_tracker.api import UserViewSet, TeamViewSet, ActivityViewSet, LeaderboardViewSet, WorkoutViewSet
+
+# API root endpoint that returns the correct API base URL
+def api_root(request):
+    codespace_name = os.environ.get('CODESPACE_NAME')
+    if codespace_name:
+        api_url = f"https://{codespace_name}-8000.app.github.dev/api/"
+    else:
+        api_url = "http://localhost:8000/api/"
+    return JsonResponse({"api_root": api_url})
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
@@ -27,6 +38,7 @@ router.register(r'workouts', WorkoutViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', api_root),  # API root endpoint
     path('api/', include(router.urls)),
     path('', include(router.urls)),
 ]
