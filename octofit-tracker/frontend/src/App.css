@@ -1,0 +1,159 @@
+:root {
+  --octofit-bg: radial-gradient(circle at 20% 0%, #e6f6ff 0%, #f4fbff 28%, #f0f4ff 52%, #fff9ef 100%);
+  --octofit-nav: linear-gradient(90deg, #0d2237 0%, #1f3f5a 54%, #235e74 100%);
+  --octofit-surface: #ffffff;
+  --octofit-heading: #16304a;
+  --octofit-text: #243b53;
+  --octofit-muted: #587086;
+  --octofit-accent: #0e9f6e;
+  --octofit-accent-strong: #0a7f58;
+  --octofit-link: #125f9a;
+  --octofit-link-hover: #0c4775;
+  --octofit-table-head: #d7f0e5;
+  --octofit-table-head-text: #18463a;
+  --octofit-row-even: #f8fcff;
+  --octofit-row-hover: #eaf6ff;
+}
+
+body {
+  background: var(--octofit-bg);
+  color: var(--octofit-text);
+  min-height: 100vh;
+}
+
+.App {
+  color: var(--octofit-text);
+}
+
+.octofit-nav {
+  background: var(--octofit-nav);
+}
+
+.navbar-brand {
+  align-items: center;
+  display: inline-flex;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+  color: #ffffff;
+}
+
+.octofit-logo {
+  border-radius: 0.4rem;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.2);
+  display: block;
+  height: 34px;
+  object-fit: contain;
+  width: auto;
+}
+
+.nav-link {
+  border-radius: 0.5rem;
+  color: #ecf3f8;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffe197;
+}
+
+.hero-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f7fffb 52%, #f4f9ff 100%);
+  border-left: 5px solid var(--octofit-accent);
+}
+
+.card {
+  border-radius: 1rem;
+  background-color: var(--octofit-surface);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--octofit-heading);
+}
+
+.table thead th {
+  background-color: var(--octofit-table-head);
+  color: var(--octofit-table-head-text);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: var(--octofit-row-even);
+}
+
+.table tbody tr:hover {
+  background-color: var(--octofit-row-hover);
+}
+
+.table tbody td,
+.table tbody th {
+  color: var(--octofit-text);
+  vertical-align: middle;
+}
+
+.btn {
+  border-radius: 0.7rem;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background-color: var(--octofit-accent);
+  border-color: var(--octofit-accent);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--octofit-accent-strong);
+  border-color: var(--octofit-accent-strong);
+}
+
+a,
+.link-primary {
+  color: var(--octofit-link);
+}
+
+a:hover,
+a:focus,
+.link-primary:hover,
+.link-primary:focus {
+  color: var(--octofit-link-hover);
+}
+
+p,
+.text-secondary {
+  color: var(--octofit-muted) !important;
+}
+
+.modal pre {
+  background: #f8f9fa;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-nav .nav-link {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+}
